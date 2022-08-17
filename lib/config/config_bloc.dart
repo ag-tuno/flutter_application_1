@@ -11,13 +11,13 @@ class SetPanelNumber extends ConfigEvent {
 
 class ConfigBloc extends Bloc<ConfigEvent, PanelNumber> {
   ConfigBloc() : super(PanelNumber.five) {
-    on<SetPanelNumber>((event, emit) => emit(_setPanelNumber(state)));
+    on<SetPanelNumber>((event, emit) => emit(_setPanelNumber(state, event.panelNumber)));
+    print(state);
   }
 }
 
-PanelNumber _setPanelNumber(state) {
-  state = PanelNumber.ten;
-  print('+++++++++++++++ $state +++++++++++++++');
+PanelNumber _setPanelNumber(state, dropdownValue) {
+  state = dropdownValue;
   return state;
 }
 

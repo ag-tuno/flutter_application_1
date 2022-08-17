@@ -35,8 +35,6 @@ class Contents extends StatelessWidget {
               color: Colors.deepPurpleAccent,
             ),
             onChanged: (dropdownValue) {
-              // TODO: setstateではなくBlocで実現する
-              print('*************** $dropdownValue ***************');
               context.read<ConfigBloc>().add(SetPanelNumber(dropdownValue));
             },
             items: PanelNumber.values.map(  
