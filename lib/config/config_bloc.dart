@@ -2,7 +2,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 abstract class ConfigEvent {}
 
-class SetPanelNumber extends ConfigEvent {}
+class SetPanelNumber extends ConfigEvent {
+  PanelNumber? panelNumber;
+  SetPanelNumber(newValue) {
+    panelNumber = newValue;
+  }
+}
 
 class ConfigBloc extends Bloc<ConfigEvent, PanelNumber> {
   ConfigBloc() : super(PanelNumber.five) {
@@ -11,7 +16,8 @@ class ConfigBloc extends Bloc<ConfigEvent, PanelNumber> {
 }
 
 PanelNumber _setPanelNumber(state) {
-  // TODO:set number
+  state = PanelNumber.ten;
+  print('+++++++++++++++ $state +++++++++++++++');
   return state;
 }
 
