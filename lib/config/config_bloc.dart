@@ -12,7 +12,6 @@ class SetPanelNumber extends ConfigEvent {
 class ConfigBloc extends Bloc<ConfigEvent, PanelNumber> {
   ConfigBloc() : super(PanelNumber.five) {
     on<SetPanelNumber>((event, emit) => emit(_setPanelNumber(state, event.panelNumber)));
-    print(state);
   }
 }
 

@@ -26,7 +26,7 @@ class TitlePage extends StatelessWidget {
               child: const Text('Go config'),
             ),
           ],
-        ),
+        ), 
       ),
     );
   }
